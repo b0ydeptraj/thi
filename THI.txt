@@ -1,0 +1,85 @@
+[SCAN IP USER]
+
+import socket
+def get_host_info():
+    try:
+        host_name = socket.gethostname()
+        host_ip = socket.gethostbyname(host_name)
+        print(f"Hostname: {host_name}")
+        print(f"IP Address: {host_ip}")
+    except Exception as e:
+        print(f"Khong the lay thong tin host: {e}")
+if __name__ == "__main__":
+    get_host_info()
+
+[[SCAN IP WEB]
+
+
+import socket
+print("Chuong trinh kiem tra dia chi IP")
+tenmien= input("NHap dia chi ten mien can ktra: ")
+ip = socket.gethostbyname(tenmien)
+print ("KQ ten mien co dia chi IP la:",ip)
+
+
+
+[MENU]
+
+
+#!/bin/bash
+while : #Khoi tao vong lap
+do
+clear
+#Hien thi menu
+echo "Server Name - $(hostname)"
+echo "________________________"
+echo " M A I N - M E N U"
+echo "________________"
+echo "1.Hien thi ngay va thoi gian."
+echo "2.Hien thi cho biet tai khoan dang hoat dong."
+echo "3.Hien thi ket noi mang."
+echo "4.Kiem tra dia chi IP cua may."
+echo "5.Ping IP xem co ket noi mang."
+echo "6.Thoat" 
+#Nhap gia tri tu nguoi dung
+read -p "Nhap gia tri trong khoang [ 1 - 6 ] " chon
+case $chon in
+1)
+echo "Ngay hom nay la:$(date)"
+read -p "Nhan phim [Enter] de tiep tuc..."
+readEnterKey ;;
+2)
+w
+read -p "Nhan phim [Enter] de tiep tuc..."
+readEnterKey
+;;
+3)
+netstat -nat
+read -p "Nhan phim [Enter] de tiep tuc..."
+readEnterKey 
+;;
+4)
+ifconfig -a
+read -p "Nhan phim [Enter] de tiep tuc..."
+readEnterKey
+;;
+5)
+if ping -q -c 1 -W 1 8.8.8.8 >/dev/null;then
+echo "IP V4 dang hoat dong"
+else 
+echo "IP V4 dang bi tat"
+fi
+read -p "Nhan phim [Enter] de tiep tuc..."
+readEnterKey 
+;;
+6)
+echo "Tam biet!"
+exit 0
+;;
+*)
+echo "Loi: Gia tri lua chon khong dung..."
+read -p "Nhan phim [Enter] de tiep tuc..."
+readEnterKey 
+;;
+esac
+done
