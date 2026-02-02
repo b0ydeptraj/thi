@@ -1,4 +1,4 @@
-[SCAN IP USER]
+[quét IP người dùng]
 
 import socket
 def get_host_info():
@@ -12,7 +12,7 @@ def get_host_info():
 if __name__ == "__main__":
     get_host_info()
 
-[[SCAN IP WEB]
+[quét IP WEB]
 
 
 import socket
@@ -82,4 +82,5 @@ read -p "Nhan phim [Enter] de tiep tuc..."
 readEnterKey 
 ;;
 esac
+
 done
