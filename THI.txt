@@ -82,5 +82,22 @@ read -p "Nhan phim [Enter] de tiep tuc..."
 readEnterKey 
 ;;
 esac
-
 done
+
+[nhập vào số tự nhiên n ]
+
+n=int(input("Nhap vao so tu nhien n:"))
+chan=0
+le=0
+tong=0
+for i in range(1,n+1):
+	print (i)
+	tong=tong+i
+	if(i%2==0):
+		chan=chan+i
+	else:
+		le=le+i
+print("Tong cac so tu 1 -> n  la:",tong)
+print("Tong cac so chan  tu 1 -> n  la:",chan)
+print("Tong cac so le tu 1 -> n  la:",le)
+
