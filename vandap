@@ -1,0 +1,74 @@
+whoami
+Cho biết tên user hiện tại đang đăng nhập.
+
+id
+Xem UID/GID, nhóm chính và nhóm phụ của user hiện tại (hoặc user chỉ định).
+
+groups
+Liệt kê các group mà user hiện tại (hoặc user chỉ định) tham gia.
+
+users
+Danh sách các user đang đăng nhập (tên ngắn gọn).
+
+who
+Xem ai đang đăng nhập và từ đâu (TTY/SSH).
+
+w
+Tương tự who nhưng thêm thời gian hoạt động, process…
+
+passwd
+Đặt/đổi mật khẩu cho user.
+
+groupadd <group>
+Tạo group mới.
+
+groupdel <group>
+Xóa group.
+
+groupmod
+Sửa group (đổi tên, đổi GID…).
+
+gpasswd
+Quản lý thành viên group (thêm/xoá/đặt admin group).
+
+cat /etc/passwd
+Danh sách user cục bộ (mỗi dòng 1 user).
+
+cat /etc/group
+Danh sách group cục bộ.
+
+chmod
+Đổi quyền rwx (cần khi phối hợp group truy cập).
+
+last
+Xem lịch sử đăng nhập (user nào login lúc nào).
+
+logname
+In ra tên user login ban đầu (khác whoami trong trường hợp sudo).
+
+useradd
+Tạo user (cấp thấp, nhiều tuỳ chọn).
+
+adduser (Ubuntu/Debian)
+Tạo user theo kiểu hỏi đáp, thân thiện.
+
+usermod
+Sửa thuộc tính user (shell, home, nhóm, đổi tên…).
+
+userdel
+Xoá user.
+
+chage
+Quản lý hạn mật khẩu/tài khoản (policy).
+
+passwd -l <user>
+Khoá tài khoản (khóa mật khẩu).
+
+passwd -u <user>
+Mở khoá tài khoản.
+
+lastlog
+Xem lần đăng nhập gần nhất của user.
+
+su - <user>
+Chuyển sang user khác (login shell).
