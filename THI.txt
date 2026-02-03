@@ -175,4 +175,147 @@ input
 maxs
 exit $?
 
+[viết chương trình tạo số thư mục cùng lúc]
+
+#!/bin/bash
+echo " chuong trinh tao thu muc trong Linux "
+echo " Nhap so thu muc can tao: "
+read N
+for ((i=1;$i<=$N; i++))
+do
+        mkdir thumuc$i
+done
+
+[Nhập vào số km mà khách hàng đã đi.
+
+Viết chương trình Shell Script để tính tổng số tiền taxi phải trả theo quy định sau:
+1 km đầu tiên: giá 10.000 đồng
+Từ km thứ 2 đến km thứ 5: giá 8.000 đồng/km
+Từ km thứ 6 trở lên: giá 7.000 đồng/km]
+
+
+#!/bin/bash
+
+tien=0
+echo "Nhap so km:"
+read km
+
+if [ "$km" -ge 0 ]; then
+    if [ "$km" -le 1 ]; then
+        echo "Tong so tien la: 10000"
+    elif [ "$km" -le 5 ]; then
+        tien=$(( (km - 1) * 8000 + 10000 ))
+        echo "Tong so tien la: $tien"
+    else
+        tien=$(( (km - 5) * 7000 + 42000 ))
+        echo "Tong so tien la: $tien"
+    fi
+else
+    echo "Nhap so khong hop le"
+    exit 0
+fi
+
+
+[Cấu trúc vòng lặp không xác định for
+Ví dụ 1 (in dạng 1 – 22 – 333 – 4444 – 55555)]
+
+
+for (( i=1; i<=5; i++ ))
+do
+        for (( j=1; j<=i; j++ ))
+        do
+                echo -n "$i"
+        done
+        echo ""
+done
+Ví dụ 2 (in dạng 1 – 12 – 123 – 1234 – 12345)
+for (( i=1; i<=5; i++ ))
+do
+        for (( j=1; j<=i; j++ ))
+        do
+                echo -n "$j"
+        done
+        echo ""
+done
+
+
+[Nhập các số tự nhiên N từ bàn phím viết chương trình in dãy từ 1 đến n và tính tổng các số từ 1 đến n]
+
+#!/bin/bash
+
+tong=0
+echo "Nhap so tu nhien N:"
+read n
+
+echo "Cac so tu 1 den N la:"
+for ((i=1; i<=n; i++))
+do
+    echo -n "$i "
+    tong=$((tong + i))
+done
+
+echo
+echo "Tong cac so tu 1 den N la: $tong"
+exit 0
+
+Vòng lặp for đếm thứ 
+#!/bin/bash
+i=1
+
+for day in Mon Tue Wed Thu Fri
+do
+    echo "Weekday $((i++)) : $day"
+done
+
+[Rẽ nhánh có điều kiện IF ví dụ 1]
+
+
+#!/bin/bash
+
+echo "Thuc hien copy trong linux"
+read -p "Nhap ten file can copy: " file1
+read -p "Nhap folder chua file: " file2
+cp "$file1" "$file2" > /dev/null
+
+if [ $? -eq 0 ]; then
+    echo "Copy thuc hien thanh cong"
+else
+    echo "Copy khong thanh cong"
+fi
+
+
+[Rẽ nhánh có điều kiện IF ví dụ 2 ]
+
+
+#!/bin/sh
+a=10
+b=20
+if [ $a -eq $b ]
+then
+        echo "a is equal to b"
+elif [ $a -gt $b ]
+then
+        echo "a is greater than b"
+elif [ $a -lt $b ]
+then
+        echo "a is less than b"
+else
+        echo "None of the condition met"
+fi
+
+
+[rẽ nhánh có điều kiện if ví dụ 3]
+
+
+
+#!/bin/sh
+a=10
+b=20
+if [ $a = $b ]
+then
+        echo "a is equal to b"
+else
+        echo "a is not equal to b"
+fi
+
 
